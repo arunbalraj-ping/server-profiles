@@ -1,0 +1,24 @@
+dn: cn=schema 
+objectClass: top 
+objectClass: ldapSubentry 
+objectClass: subschema 
+attributeTypes: ( contractorStatus-OID NAME 'contractorStatus'
+  EQUALITY booleanMatch 
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 
+  SINGLE-VALUE 
+  USAGE userApplications 
+  X-ORIGIN 'Directory Server Example' )
+attributeTypes: ( contractorAgency-OID NAME 'contractorAgency' 
+  EQUALITY caseIgnoreMatch 
+  SUBSTR caseIgnoreSubstringsMatch 
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.44{256}
+  SINGLE-VALUE 
+  USAGE userApplications 
+  X-ORIGIN 'PingDirectory Server Example' )
+objectClasses: ( contractor-OID 
+  NAME 'contractor' 
+  DESC 'Contractor status information' 
+  SUP top 
+  AUXILIARY
+  MAY ( contractorStatus $ contractorAgency ) 
+  X-ORIGIN 'PingDirectory Server Example' )
