@@ -1,0 +1,15 @@
+dn: cn=schema
+objectClass: top
+objectClass: ldapSubentry
+objectClass: subschema
+attributeTypes: ( userPrincipalName-OID NAME 'userPrincipalName'
+  DESC 'UserPrincipalName attribute for ANZ Staff Users'
+  EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch
+  SINGLE-VALUE
+  USAGE userApplications )
+objectClasses: ( ANZStaffUser-OID NAME 'ANZStaffUser'
+  DESC 'Object Class for ANZ Staff User Attributes'
+  SUP inetOrgPerson
+  STRUCTURAL MAY (userPrincipalName $ c)
+  X-ORIGIN 'ANZ StaffAM Custom Object for PingDirectory' )
