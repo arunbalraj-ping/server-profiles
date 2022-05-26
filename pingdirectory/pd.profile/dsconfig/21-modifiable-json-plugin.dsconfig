@@ -1,5 +1,3 @@
-dsconfig create-plugin \
+dsconfig set-plugin-prop \
     --plugin-name "Modifiable Password Policy State Plugin" \
-    --type modifiable-password-policy-state \
     --set enabled:true \
-    --set "filter:(|(objectClass=person)(objectClass=ds-cfg-user))"
