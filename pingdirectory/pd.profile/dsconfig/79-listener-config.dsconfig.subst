@@ -1,5 +1,5 @@
 dsconfig -n set-server-instance-listener-prop \
-      --instance-name ${POD_HOSTNAME} \
+      --instance-name ${HOST_NAME} \
       --listener-name ldap-listener-mirrored-config \
       --set 'listener-certificate<${LISTENER_CERTIFICATE}'
 
