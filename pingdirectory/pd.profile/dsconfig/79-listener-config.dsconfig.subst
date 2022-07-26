@@ -1,5 +1,5 @@
 dsconfig -n set-server-instance-listener-prop \
-      --instance-name "(${HOST_NAME}.${K8S_STATEFUL_SET_SERVICE_NAME})" \
+      --instance-name "${HOST_NAME}.${K8S_STATEFUL_SET_SERVICE_NAME}" \
       --listener-name ldap-listener-mirrored-config \
       --set 'listener-certificate<${LISTENER_CERTIFICATE}'
 
